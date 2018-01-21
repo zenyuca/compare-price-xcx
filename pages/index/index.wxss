@@ -1,0 +1,24 @@
+/**index.wxss**/
+.form-login {
+  width: 90%;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+}
+.section {
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-bottom: 40rpx;
+}
+
+.section > input {
+  height: 100%;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px
+}
+
+button {
+  margin-bottom: 20px;
+}

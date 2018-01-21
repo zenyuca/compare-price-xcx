@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userInfo">
+    <view class="item">
+      <text class="label">公司名称:</text>
+      <text class="value">{{userInfo.username}}</text>
+    </view>
+    <view class="item">
+      <text class="label">联系人:</text>
+      <text class="value">{{userInfo.linker}}</text>
+    </view>
+    <view class="item">
+      <text class="label">联系电话:</text>
+      <text class="value">{{userInfo.linkPhone}}</text>
+    </view>
+    <view class="item">
+      <text class="label">邮箱:</text>
+      <text class="value">{{userInfo.email}}</text>
+    </view>
+    <view class="item">
+      <text class="label">微信:</text>
+      <text class="value">{{userInfo.wechat}}</text>
+    </view>
+  </view>
+</view>

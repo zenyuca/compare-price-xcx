@@ -1,0 +1,14 @@
+/**index.wxss**/
+/**app.wxss**/
+.container {
+  padding: 0;
+}
+.title {
+  text-align: center;
+  font-size: 24px;
+}
+.content {
+	padding: 20px;
+}
+
+
