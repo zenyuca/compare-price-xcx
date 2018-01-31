@@ -16,6 +16,9 @@ Page({
     let title = '供应商资料'
     if (app.globalData.loginInfo.role === 0) {
       title = '我的资料'
+      this.setData({
+        userInfo: app.globalData.loginInfo
+      })
     }
     wx.setNavigationBarTitle({
       title

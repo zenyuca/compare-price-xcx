@@ -29,8 +29,23 @@ Page({
       role: role
     }
     
-    wx.navigateTo({
-      url: '../index/index'
+    app.func.req('/api/login', {
+      name: this.data.username,
+      pwd: this.data.pwd
+    }, (res) => {
+      if (res.errno === 0) {
+        app.globalData.loginInfo = res.data
+        console.log(app.globalData.loginInfo)
+        wx.navigateTo({
+          url: '../index/index'
+        })
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none',
+          duration: 2000
+        })
+      }
     })
   },
   onLoad: function () {

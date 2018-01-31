@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    notice: ''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -14,6 +15,11 @@ Page({
   onLoad: function () {
     wx.setNavigationBarTitle({
       title: '注意事项'
+    })
+    app.func.req('/api/notice', {}, (res) => {
+      this.setData({
+        notice: res.data
+      })
     })
   }
 })

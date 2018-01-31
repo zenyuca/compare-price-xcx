@@ -28,7 +28,8 @@ Page({
       loginInfo: app.globalData.loginInfo
     })
     wx.setNavigationBarTitle({
-      title: '主页'
+      title: '欢迎' + this.data.loginInfo.username
+      
     })
   }
 })
