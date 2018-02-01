@@ -15,11 +15,35 @@ const formatNumber = n => {
 }
 
 var rootDocment = 'https://www.zenyuca.club';//你的域名  
-function req(url, data, cb) {
+
+function get(url, data, cb) {
   wx.request({
-    url: rootDocment + url,
+    url: rootDocment + url + '?appType=hlxt',
     data: data,
     method: 'get',
+    header: { 'Content-Type': 'application/json' },
+    success: function (res) {
+      if (res.code === 200) {
+        return typeof cb == "function" && cb(res.data)
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    },
+    fail: function () {
+      return typeof cb == "function" && cb(false)
+    }
+  })
+}
+
+function post(url, data, cb) {
+  wx.request({
+    url: rootDocment + url + '?appType=hlxt',
+    data: data,
+    method: 'post',
     header: { 'Content-Type': 'application/json' },
     success: function (res) {
       return typeof cb == "function" && cb(res.data)
@@ -30,7 +54,9 @@ function req(url, data, cb) {
   })
 }
 
+
 module.exports = {
   formatTime: formatTime,
-  req: req
+  get,
+  post
 }

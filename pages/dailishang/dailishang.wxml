@@ -3,15 +3,15 @@
   <view class="userInfo">
     <view class="item">
       <text class="label">公司名称:</text>
-      <text class="value">{{userInfo.username}}</text>
+      <text class="value">{{userInfo.name}}</text>
     </view>
     <view class="item">
       <text class="label">联系人:</text>
-      <text class="value">{{userInfo.linker}}</text>
+      <text class="value">{{userInfo.linkman}}</text>
     </view>
     <view class="item">
       <text class="label">联系电话:</text>
-      <text class="value">{{userInfo.linkPhone}}</text>
+      <text class="value">{{userInfo.mobile}}</text>
     </view>
     <view class="item">
       <text class="label">邮箱:</text>
@@ -19,7 +19,7 @@
     </view>
     <view class="item">
       <text class="label">微信:</text>
-      <text class="value">{{userInfo.wechat}}</text>
+      <text class="value">{{userInfo.wecatId}}</text>
     </view>
   </view>
 </view>

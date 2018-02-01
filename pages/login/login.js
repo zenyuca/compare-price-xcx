@@ -29,23 +29,15 @@ Page({
       role: role
     }
     
-    app.func.req('/api/login', {
+    app.func.post('/rest/admin/login', {
       name: this.data.username,
       pwd: this.data.pwd
     }, (res) => {
-      if (res.errno === 0) {
-        app.globalData.loginInfo = res.data
-        console.log(app.globalData.loginInfo)
-        wx.navigateTo({
-          url: '../index/index'
-        })
-      } else {
-        wx.showToast({
-          title: res.msg,
-          icon: 'none',
-          duration: 2000
-        })
-      }
+      app.globalData.loginInfo = res.data.user
+      console.log(app.globalData.loginInfo)
+      wx.navigateTo({
+        url: '../index/index'
+      })
     })
   },
   onLoad: function () {

@@ -3,9 +3,9 @@
 .container {
   padding: 0;
 }
-.title {
-  text-align: center;
-  font-size: 24px
+.user {
+  width:90%;
+  margin-bottom:10px;
 }
 
 

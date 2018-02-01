@@ -40,6 +40,7 @@ App({
     loginInfo: null
   },
   func: {
-    req: http.req
+    get: http.get,
+    post: http.post
   }
 })

@@ -5,11 +5,6 @@ const app = getApp()
 Page({
   data: {
     userInfo: {
-      username: 'yuca',
-      linker: '李先生',
-      linkPhone: '1110',
-      email: '23424234@qq.com',
-      wechat: '234242432424'
     }
   },
   onLoad: function () {
@@ -18,6 +13,11 @@ Page({
       title = '我的资料'
       this.setData({
         userInfo: app.globalData.loginInfo
+      })
+      console.log(app.globalData.loginInfo)
+    } else {
+      this.setData({
+        userInfo: app.globalData.userInfo
       })
     }
     wx.setNavigationBarTitle({
