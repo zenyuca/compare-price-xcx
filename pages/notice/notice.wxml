@@ -1,8 +1,5 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="section title">
-    <text></text>
-  </view>
   <view class="content">
     {{notice}}
   </view>

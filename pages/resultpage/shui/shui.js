@@ -4,8 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    userInfo: {
-    }
+    resultInfo: []
   },
   previewImg (e) {
     let url = e.currentTarget.dataset.url
@@ -19,23 +18,11 @@ Page({
     })
   },
   onLoad: function () {
-    let title = '供应商资料'
-    if (app.globalData.loginInfo.role === 0) {
-      title = '我的资料'
-      let userInfo = app.globalData.loginInfo
-      app.func.get(`/rest/admin/find/remark/${userInfo.id}`, {}, res => {
-        userInfo.remark = res
-        this.setData({
-          userInfo
-        })
-      })
-    } else {
-      this.setData({
-        userInfo: app.globalData.userInfo
-      })
-    }
     wx.setNavigationBarTitle({
-      title
+      title: '冻品投标结果'
+    })
+    this.setData({
+      resultInfo: app.globalData.resultInfo
     })
   }
 })

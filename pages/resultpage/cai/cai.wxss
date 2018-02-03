@@ -3,39 +3,16 @@
 .container {
   padding: 0;
 }
-.title {
-  text-align: center;
-  font-size: 24px
+.user {
+  width:90%;
+  margin-bottom:10px;
 }
-
-.userInfo {
-  width: 90%;
-  /* border-bottom: 1px solid #aaa; */
-}
-.userInfo > .item {
-  height: 60rpx;
-  line-height: 60rpx;
-  margin-bottom: 20rpx;
-  display: flex;
-}
-
-.userInfo > .item > .label {
-  width: 200rpx;
-  text-align: right;
-  padding-right: 40rpx;
-}
-
-.userInfo > .item > .value {
-  flex: 1;
-}
-
-.remark image {
+image {
   width:50px;
   height:50px;
 }
-
 .table {
-  width: 1000px;
+  width: 2000px;
   border: 0px solid darkgray;
 }
 .tr {

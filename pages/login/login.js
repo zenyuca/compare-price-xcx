@@ -33,8 +33,7 @@ Page({
       name: this.data.username,
       pwd: this.data.pwd
     }, (res) => {
-      app.globalData.loginInfo = res.data.user
-      console.log(app.globalData.loginInfo)
+      app.globalData.loginInfo = res.user
       wx.navigateTo({
         url: '../index/index'
       })

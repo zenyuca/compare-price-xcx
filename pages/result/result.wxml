@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+  <view wx:key="{{item.type}}" wx:for="{{list}}" class="user">
+    <button type="primary" size="default" data-type="{{item.type}}" bindtap="toUserInfoPage">
+      {{item.name}}
+    </button>
+  </view>
+</view>

@@ -4,6 +4,11 @@
     "pages/index/index",
     "pages/notice/notice",
     "pages/dailishang/dailishang",
+    "pages/result/result",
+    "pages/resultpage/rou/rou",
+    "pages/resultpage/cai/cai",
+    "pages/resultpage/gan/gan",
+    "pages/resultpage/shui/shui",
     "pages/dailishangList/dailishangList"
   ],
   "window":{

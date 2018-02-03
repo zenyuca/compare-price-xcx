@@ -16,9 +16,9 @@ Page({
     wx.setNavigationBarTitle({
       title: '注意事项'
     })
-    app.func.req('/api/notice', {}, (res) => {
+    app.func.get('/rest/admin/get/configure/1', {}, (res) => {
       this.setData({
-        notice: res.data
+        notice: res.content
       })
     })
   }

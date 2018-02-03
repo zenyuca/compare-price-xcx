@@ -12,6 +12,11 @@ Page({
       url: '../notice/notice'
     })
   },
+  toResultPage: function () {
+    wx.navigateTo({
+      url: '../result/result'
+    })
+  },
   dailishangPage: function() {
     let url = ''
     if (this.data.loginInfo.role === 0) {
@@ -28,7 +33,7 @@ Page({
       loginInfo: app.globalData.loginInfo
     })
     wx.setNavigationBarTitle({
-      title: '欢迎' + this.data.loginInfo.username
+      title: '欢迎' + this.data.loginInfo.name
       
     })
   }

@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <view wx:for="{{users}}" class="user">
+  <view wx:key="{{item.id}}" wx:for="{{users}}" class="user">
     <button type="primary" size="default" data-id="{{item.id}}" bindtap="toUserInfoPage">
       用户： {{item.name}}
     </button>
