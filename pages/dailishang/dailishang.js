@@ -25,6 +25,13 @@ Page({
       let userInfo = app.globalData.loginInfo
       app.get(`/rest/admin/find/remark/${userInfo.id}`, {}, res => {
         userInfo.remark = res
+        if (res) {
+          let i = 0
+          for (let item of userInfo.remark) {
+            item.seq = ++i
+            item.createTime = new Date(item.createTime).Format('yyyy-MM-dd hh:mm:ss')
+          }
+        }
         this.setData({
           userInfo
         })
