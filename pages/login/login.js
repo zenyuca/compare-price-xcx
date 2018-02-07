@@ -29,11 +29,13 @@ Page({
       role: role
     }
     
-    app.func.post('/rest/admin/login', {
+    app.post('/rest/admin/login', {
       name: this.data.username,
       pwd: this.data.pwd
     }, (res) => {
       app.globalData.loginInfo = res.user
+      app.globalData.accessToken = res.accessToken
+      app.globalData.sessionId = res.sessionId
       wx.navigateTo({
         url: '../index/index'
       })

@@ -4,7 +4,8 @@ const app = getApp()
 
 Page({
   data: {
-    resultInfo: []
+    resultInfo: [],
+    endTime: ''
   },
   previewImg (e) {
     let url = e.currentTarget.dataset.url
@@ -21,8 +22,12 @@ Page({
     wx.setNavigationBarTitle({
       title: '冻品投标结果'
     })
-    this.setData({
+    let info = {
       resultInfo: app.globalData.resultInfo
-    })
+    }
+    if (app.globalData.resultInfo[0]) {
+      info.endTime = new Date(app.globalData.resultInfo[0].endTime).Format('yyyy-MM-dd hh:mm:ss')
+    }
+    this.setData(info)
   }
 })

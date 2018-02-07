@@ -1,5 +1,8 @@
 <!--index.wxml-->
 <view class="container">
+  <view>
+    以{{endTime}}之后时间结果为准
+  </view>
   <scroll-view scroll-x style="width: 100%">
     <view class="table">
       <view class="tr bg-w">

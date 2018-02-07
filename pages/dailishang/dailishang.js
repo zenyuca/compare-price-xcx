@@ -23,7 +23,7 @@ Page({
     if (app.globalData.loginInfo.role === 0) {
       title = '我的资料'
       let userInfo = app.globalData.loginInfo
-      app.func.get(`/rest/admin/find/remark/${userInfo.id}`, {}, res => {
+      app.get(`/rest/admin/find/remark/${userInfo.id}`, {}, res => {
         userInfo.remark = res
         this.setData({
           userInfo

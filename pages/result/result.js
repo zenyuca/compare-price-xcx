@@ -26,7 +26,7 @@ Page({
   //事件处理函数
   toUserInfoPage: function(event) {
     let type = event.currentTarget.dataset.type
-    app.func.get(`/rest/export/find/tender/result/${type}`, {}, (res) => {
+    app.post(`/rest/export/find/tender/result/${type}/${app.globalData.loginInfo.id}`, {}, (res) => {
       if (!res) {
         wx.showToast({
           title: '暂无数据，请耐心等待……',

@@ -10,7 +10,7 @@ Page({
   //事件处理函数
   toUserInfoPage: function(event) {
     let id = event.currentTarget.dataset.id
-    app.func.get(`/rest/admin/find/remark/${id}`, {}, res => {
+    app.get(`/rest/admin/find/remark/${id}`, {}, res => {
       for (let user of this.data.users) {
         if (id === user.id) {
           let i = 0
@@ -32,7 +32,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '代理商列表'
     })
-    app.func.get('/rest/admin/find/agent', {}, (res) => {
+    app.get('/rest/admin/find/agent', {}, (res) => {
       this.setData({
         users: res
       })

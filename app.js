@@ -23,8 +23,10 @@ Date.prototype.Format = function (fmt) { // author: meizz
   return fmt
 }
 
+const app = getApp()
+
 //app.js
-var rootDocment = 'https://www.zenyuca.club';//你的域名  
+var rootDocment = 'https://labs.weilien.com';//你的域名
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -60,52 +62,58 @@ App({
   },
   globalData: {
     userInfo: null,
-    loginInfo: null
+    loginInfo: null,
+    sessionId: ''
   },
-  func: {
-    get: function (url, data, cb) {
-      wx.request({
-        url: rootDocment + url + '?appType=hlxt',
-        data: data,
-        method: 'get',
-        header: { 'Content-Type': 'application/json' },
-        success: function (res) {
-          if (res.data.code === 200) {
-            return typeof cb == "function" && cb(res.data.data)
-          } else {
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'none',
-              duration: 2000
-            })
-          }
-        },
-        fail: function () {
-          return typeof cb == "function" && cb(false)
+  post: function (url, data, cb) {
+    wx.request({
+      url: rootDocment + url + '?appType=hlxt',
+      data: data,
+      method: 'post',
+      header: {
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Cookie': 'session_hlxt=' + this.globalData.sessionId + ';token_hlxt=' + this.globalData.accessToken
+      },
+      success: function (res) {
+        if (res.data.code === 200) {
+          return typeof cb == "function" && cb(res.data.data)
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 2000
+          })
         }
-      })
-    },
-    post: function (url, data, cb) {
-      wx.request({
-        url: rootDocment + url + '?appType=hlxt',
-        data: data,
-        method: 'post',
-        header: { 'Content-Type': 'application/json' },
-        success: function (res) {
-          if (res.data.code === 200) {
-            return typeof cb == "function" && cb(res.data.data)
-          } else {
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'none',
-              duration: 2000
-            })
-          }
-        },
-        fail: function () {
-          return typeof cb == "function" && cb(false)
+      },
+      fail: function () {
+        return typeof cb == "function" && cb(false)
+      }
+    })
+  },
+  get: function (url, data, cb) {
+    console.log(this.globalData.sessionId)
+    wx.request({
+      url: rootDocment + url + '?appType=hlxt',
+      data: data,
+      method: 'get',
+      header: {
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Cookie': 'session_hlxt=' + this.globalData.sessionId + ';token_hlxt=' + this.globalData.accessToken
+      },
+      success: function (res) {
+        if (res.data.code === 200) {
+          return typeof cb == "function" && cb(res.data.data)
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 2000
+          })
         }
-      })
-    }
+      },
+      fail: function () {
+        return typeof cb == "function" && cb(false)
+      }
+    })
   }
 })
