@@ -17,6 +17,11 @@ Page({
       url: '../result/result'
     })
   },
+  toStartPage: function () {
+    wx.navigateTo({
+      url: '../start/start'
+    })
+  },
   dailishangPage: function() {
     let url = ''
     if (this.data.loginInfo.role === 0) {

@@ -4,12 +4,17 @@
     "pages/index/index",
     "pages/notice/notice",
     "pages/dailishang/dailishang",
+    "pages/dailishangList/dailishangList",
     "pages/result/result",
     "pages/resultpage/rou/rou",
     "pages/resultpage/cai/cai",
     "pages/resultpage/gan/gan",
     "pages/resultpage/shui/shui",
-    "pages/dailishangList/dailishangList"
+    "pages/start/start",
+    "pages/startpage/rou/rou",
+    "pages/startpage/cai/cai",
+    "pages/startpage/gan/gan",
+    "pages/startpage/shui/shui"
   ],
   "window":{
     "backgroundTextStyle":"light",
