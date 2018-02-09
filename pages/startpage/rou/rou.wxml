@@ -26,7 +26,7 @@
           <view class="td">{{item.name}}</view>
           <view class="td">{{item.spec}}</view>
           <view class="td">{{item.unit}}</view>
-          <view class="td">{{item.agentName}}</view>
+          <view class="td">{{item.business}}</view>
           <view class="td">{{item.unitPrice}}</view>
           <view class="td">{{item.number}}</view>
           <view class="td">{{item.remark}}</view>
@@ -42,7 +42,7 @@
           <view class="td">{{item.name}}</view>
           <view class="td">{{item.spec}}</view>
           <view class="td">{{item.unit}}</view>
-          <view class="td">{{item.agentName}}</view>
+          <view class="td">{{item.business}}</view>
           <view class="td">{{item.unitPrice}}</view>
           <view class="td">{{item.number}}</view>
           <view class="td">{{item.remark}}</view>
