@@ -26,7 +26,7 @@ Date.prototype.Format = function (fmt) { // author: meizz
 const app = getApp()
 
 //app.js
-var rootDocment = 'https://labs.weilien.com';//你的域名
+var rootDocment = 'https://www.cdkcwy.top';//你的域名
 App({
   onLaunch: function () {
     // 展示本地存储能力
